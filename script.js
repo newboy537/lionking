@@ -147,7 +147,7 @@ duration:1800
 },1800);
 
 // Détection navigateur
-
+/*
 const ua=navigator.userAgent.toLowerCase();
 
 const isTikTok=ua.includes("tiktok");
@@ -161,7 +161,7 @@ window.location.href="https://whatsapp.com/channel/0029VbAetxL7DAX5z4Edxr0d";
 },2500);
 
 }
-
+*/
 // Console
 
 console.log("🦁 LIONKING READY");
