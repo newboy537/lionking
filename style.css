@@ -1082,3 +1082,15 @@ background:#FFD700;
 color:#000;
 
 }
+
+.cta{
+    position: relative;
+    z-index: 9999;
+}
+
+.main-btn{
+    position: relative;
+    z-index: 10000;
+    pointer-events: auto;
+    cursor: pointer;
+}
