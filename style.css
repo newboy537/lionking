@@ -1,64 +1,62 @@
-/* ===========================
-   LIONKING PREMIUM CSS
-   PARTIE 1 / 3
-=========================== */
+/*============================
+
+LIONKING PREMIUM
+
+=============================*/
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 html{
-    scroll-behavior:smooth;
+
+height:100%;
+
 }
 
 body{
-    background:#060606;
-    color:#fff;
-    overflow-x:hidden;
+
+background:#050505;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+padding:20px;
+
+color:white;
+
+position:relative;
+
 }
 
-/* Scrollbar */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:#111;
-}
-
-::-webkit-scrollbar-thumb{
-    background:linear-gradient(#c89b3c,#ffd86f);
-    border-radius:20px;
-}
-
-/* Background */
+/* Fond */
 
 .background{
 
-    position:fixed;
+position:fixed;
 
-    width:100%;
+inset:0;
 
-    height:100%;
+background:
+radial-gradient(circle at top,#00ff8830 0%,transparent 30%),
+radial-gradient(circle at bottom,#ffd70015 0%,transparent 40%),
+linear-gradient(#050505,#111);
 
-    top:0;
-
-    left:0;
-
-    z-index:-2;
-
-    background:
-    radial-gradient(circle at top,#6b520d 0%,transparent 30%),
-    radial-gradient(circle at bottom,#222 0%,transparent 40%),
-    #050505;
+z-index:-5;
 
 }
 
-/* Golden Glow */
+/* Halo */
 
 .background::after{
 
@@ -66,267 +64,123 @@ content:"";
 
 position:absolute;
 
-width:600px;
+width:550px;
 
-height:600px;
+height:550px;
 
-background:#c89b3c;
+background:#00ff88;
 
-filter:blur(220px);
+filter:blur(180px);
 
-opacity:.08;
-
-top:-200px;
+opacity:.06;
 
 left:50%;
 
 transform:translateX(-50%);
 
+top:-150px;
+
 }
 
-/* Loader */
+/* Main */
 
-#loader{
+.hand{
 
 position:fixed;
 
-top:0;
+top:18px;
 
-left:0;
+right:12px;
 
-width:100%;
+width:75px;
 
-height:100vh;
+z-index:9999;
 
-background:#050505;
+pointer-events:none;
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:99999;
-
-animation:loaderFade 1s ease forwards;
-
-animation-delay:2s;
+animation:finger .8s infinite ease-in-out;
 
 }
 
-#loader h1{
-
-font-size:60px;
-
-letter-spacing:8px;
-
-color:#FFD700;
-
-animation:pulse 1.2s infinite;
-
-}
-
-@keyframes pulse{
+@keyframes finger{
 
 0%{
 
-transform:scale(1);
+transform:translateY(12px);
 
 }
 
 50%{
 
-transform:scale(1.1);
+transform:translateY(-8px);
 
 }
 
 100%{
 
-transform:scale(1);
+transform:translateY(12px);
 
 }
 
 }
 
-@keyframes loaderFade{
+/* Texte sous la main */
 
-to{
+.arrow{
 
-opacity:0;
+position:fixed;
 
-visibility:hidden;
+top:95px;
 
-}
+right:8px;
 
-}
-
-/* Hero */
-
-.hero{
-    min-height:75vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px 20px;
-    text-align:center;
-    position:relative;
-}
-
-.hero-content{
-
-max-width:900px;
-
-animation:fadeUp 1s;
-
-}
-
-.logo{
-
-width:170px;
-
-margin-bottom:35px;
-
-filter:drop-shadow(0 0 25px gold);
-
-}
-
-.hero h1{
-
-font-size:65px;
-
-font-weight:800;
-
-line-height:1.15;
-
-margin-bottom:25px;
-
-}
-
-.hero h1 span{
-
-color:#FFD700;
-
-}
-
-.hero p{
-
-font-size:20px;
-
-color:#d7d7d7;
-
-line-height:1.8;
-
-margin-bottom:45px;
-
-}
-
-/* Button */
-
-.main-btn{
-
-display:inline-flex;
-
-align-items:center;
-
-gap:15px;
-
-padding:20px 40px;
-
-background:#25D366;
-
-border-radius:60px;
-
-font-size:20px;
+font-size:16px;
 
 font-weight:700;
 
-color:white;
+color:#00ff88;
 
-text-decoration:none;
-
-transition:.35s;
-
-box-shadow:0 0 35px rgba(37,211,102,.45);
-
-animation:buttonPulse 2s infinite;
+animation:blink 1s infinite;
 
 }
 
-.main-btn:hover{
+@keyframes blink{
 
-transform:translateY(-6px);
+0%{opacity:1;}
 
-box-shadow:0 0 60px rgba(37,211,102,.9);
+50%{opacity:.3;}
 
-}
-
-.main-btn i{
-
-font-size:30px;
+100%{opacity:1;}
 
 }
 
-@keyframes buttonPulse{
+/* Container */
 
-0%{
+.container{
 
-transform:scale(1);
+width:100%;
 
-}
+max-width:430px;
 
-50%{
-
-transform:scale(1.05);
+text-align:center;
 
 }
 
-100%{
+/* Logo */
 
-transform:scale(1);
+.logo{
 
-}
+width:135px;
 
-}
+margin-bottom:15px;
 
-/* Floating WhatsApp */
+filter:drop-shadow(0 0 20px gold);
 
-.floating-whatsapp{
-
-position:fixed;
-
-bottom:25px;
-
-right:25px;
-
-width:70px;
-
-height:70px;
-
-background:#25D366;
-
-border-radius:50%;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-font-size:36px;
-
-color:white;
-
-text-decoration:none;
-
-z-index:999;
-
-box-shadow:0 0 30px rgba(37,211,102,.7);
-
-animation:float 2s infinite;
+animation:logoFloat 3s infinite ease-in-out;
 
 }
 
-@keyframes float{
+@keyframes logoFloat{
 
 0%{
 
@@ -348,479 +202,53 @@ transform:translateY(0);
 
 }
 
-/* Fade */
+/* Titre */
 
-@keyframes fadeUp{
+h1{
 
-from{
+font-size:38px;
 
-opacity:0;
+font-weight:800;
 
-transform:translateY(60px);
+margin-bottom:12px;
 
-}
+color:#00ff88;
 
-to{
-
-opacity:1;
-
-transform:translateY(0);
+text-shadow:0 0 18px #00ff88;
 
 }
 
-}
+/* Description */
 
-/* ===========================
-   BOOKMAKERS
-=========================== */
+.subtitle{
 
-.bookmakers{
+font-size:16px;
 
-padding:100px 20px;
+line-height:1.7;
 
-text-align:center;
+color:#d8d8d8;
 
-}
-
-.bookmakers h2{
-
-font-size:45px;
-
-margin-bottom:60px;
-
-font-weight:700;
+margin-bottom:28px;
 
 }
 
-.cards{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-
-gap:25px;
-
-max-width:1100px;
-
-margin:auto;
-
-}
+/* Carte */
 
 .card{
+
+background:#1b1b1b;
+
+border-radius:28px;
 
 padding:30px;
 
-border-radius:22px;
+border:1px solid rgba(255,255,255,.06);
 
-text-decoration:none;
+box-shadow:
 
-font-size:22px;
+0 20px 45px rgba(0,0,0,.45),
 
-font-weight:700;
-
-color:white;
-
-transition:.35s;
-
-backdrop-filter:blur(15px);
-
-background:rgba(255,255,255,.05);
-
-border:1px solid rgba(255,255,255,.08);
-
-}
-
-.card:hover{
-
-transform:translateY(-12px) scale(1.05);
-
-}
-
-/* Couleurs */
-
-.blue{
-
-background:#1565ff;
-
-box-shadow:0 0 30px rgba(21,101,255,.45);
-
-}
-
-.yellow{
-
-background:#FFC400;
-
-color:#000;
-
-box-shadow:0 0 30px rgba(255,196,0,.45);
-
-}
-
-.red{
-
-background:#d81b1b;
-
-box-shadow:0 0 30px rgba(216,27,27,.45);
-
-}
-
-.green{
-
-background:#06b66d;
-
-box-shadow:0 0 30px rgba(6,182,109,.45);
-
-}
-
-.cyan{
-
-background:#18bfff;
-
-box-shadow:0 0 30px rgba(24,191,255,.45);
-
-}
-
-/* ===========================
-   PROMO
-=========================== */
-
-.promo{
-
-padding:120px 20px;
-
-text-align:center;
-
-}
-
-.promo h2{
-
-font-size:42px;
-
-margin-bottom:35px;
-
-}
-
-#promoCode{
-
-display:inline-block;
-
-padding:28px 55px;
-
-font-size:45px;
-
-font-weight:800;
-
-letter-spacing:5px;
-
-border-radius:25px;
-
-background:linear-gradient(135deg,#FFD700,#ffb700);
-
-color:#000;
-
-box-shadow:0 0 45px rgba(255,215,0,.55);
-
-margin-bottom:35px;
-
-transition:.35s;
-
-}
-
-#promoCode:hover{
-
-transform:scale(1.05);
-
-}
-
-#copyButton{
-
-padding:18px 45px;
-
-border:none;
-
-border-radius:50px;
-
-background:#fff;
-
-color:#111;
-
-font-size:18px;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.35s;
-
-}
-
-#copyButton:hover{
-
-background:#FFD700;
-
-transform:translateY(-4px);
-
-}
-
-/* ===========================
-   RESULTS
-=========================== */
-
-.results{
-
-padding:120px 20px;
-
-}
-
-.results h2{
-
-font-size:45px;
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
-
-.gallery{
-
-display:flex;
-
-gap:25px;
-
-overflow-x:auto;
-
-scroll-snap-type:x mandatory;
-
-padding-bottom:15px;
-
-}
-
-.gallery::-webkit-scrollbar{
-
-height:6px;
-
-}
-
-.gallery img{
-
-width:280px;
-
-border-radius:22px;
-
-scroll-snap-align:center;
-
-transition:.35s;
-
-cursor:pointer;
-
-box-shadow:0 10px 35px rgba(0,0,0,.45);
-
-}
-
-.gallery img:hover{
-
-transform:scale(1.07);
-
-}
-
-/* Glass Effect */
-
-.gallery img{
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(12px);
-
-}
-
-/* Animation */
-
-.gallery img{
-
-animation:showImage .8s ease;
-
-}
-
-@keyframes showImage{
-
-from{
-
-opacity:0;
-
-transform:translateY(60px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-/* Ombre sections */
-
-.bookmakers,
-.promo,
-.results{
-
-position:relative;
-
-}
-
-.bookmakers::before,
-.promo::before,
-.results::before{
-
-content:"";
-
-position:absolute;
-
-width:420px;
-
-height:420px;
-
-background:#FFD700;
-
-filter:blur(180px);
-
-opacity:.04;
-
-top:0;
-
-left:50%;
-
-transform:translateX(-50%);
-
-pointer-events:none;
-
-}
-
-/* ===========================
-   CTA FINAL
-=========================== */
-
-.cta{
-
-padding:120px 20px;
-
-text-align:center;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.cta::before{
-
-content:"";
-
-position:absolute;
-
-width:500px;
-
-height:500px;
-
-background:#FFD700;
-
-filter:blur(220px);
-
-opacity:.05;
-
-left:50%;
-
-top:50%;
-
-transform:translate(-50%,-50%);
-
-}
-
-.cta h2{
-
-font-size:50px;
-
-font-weight:800;
-
-margin-bottom:40px;
-
-line-height:1.3;
-
-}
-
-.cta .main-btn{
-
-font-size:22px;
-
-padding:22px 55px;
-
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer{
-
-padding:40px 20px;
-
-text-align:center;
-
-font-size:15px;
-
-color:#888;
-
-border-top:1px solid rgba(255,255,255,.08);
-
-margin-top:80px;
-
-}
-
-/* ===========================
-   SCROLL REVEAL
-=========================== */
-
-.hidden{
-
-opacity:0;
-
-transform:translateY(80px);
-
-transition:1s;
-
-}
-
-.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-/* ===========================
-   HOVER EFFECT
-=========================== */
-
-.logo{
-
-transition:.5s;
-
-}
-
-.logo:hover{
-
-transform:rotate(-3deg) scale(1.08);
-
-filter:drop-shadow(0 0 35px gold);
-
-}
-
-.card{
+0 0 40px rgba(0,255,136,.08);
 
 position:relative;
 
@@ -834,255 +262,334 @@ content:"";
 
 position:absolute;
 
-top:-120%;
+top:0;
 
-left:-30%;
+left:-120%;
 
-width:60%;
+width:70px;
 
-height:300%;
+height:100%;
 
-background:rgba(255,255,255,.18);
+background:linear-gradient(
 
-transform:rotate(25deg);
+90deg,
 
-transition:.8s;
+transparent,
 
-}
+rgba(255,255,255,.18),
 
-.card:hover::before{
+transparent
 
-left:130%;
+);
 
-}
+transform:skewX(-25deg);
 
-/* ===========================
-   IMAGES
-=========================== */
-
-.gallery img{
-
-border:2px solid rgba(255,255,255,.08);
+animation:shine 5s infinite;
 
 }
 
-.gallery img:active{
+@keyframes shine{
 
-transform:scale(.97);
+100%{
 
-}
-
-/* ===========================
-   RESPONSIVE TABLET
-=========================== */
-
-@media(max-width:992px){
-
-.hero h1{
-
-font-size:48px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-.bookmakers h2,
-.results h2,
-.cta h2{
-
-font-size:38px;
+left:150%;
 
 }
 
 }
 
-/* ===========================
-   RESPONSIVE MOBILE
-=========================== */
+.card h2{
 
-@media(max-width:768px){
+font-size:23px;
 
-.logo{
+line-height:1.4;
 
-width:120px;
+margin-bottom:25px;
 
 }
 
-.hero{
+/*============================
 
-padding:80px 20px;
+ETAPES
 
-}
+=============================*/
 
-.hero h1{
+.step{
 
-font-size:34px;
+display:flex;
 
-line-height:1.3;
+align-items:center;
 
-}
+gap:16px;
 
-.hero p{
-
-font-size:16px;
-
-}
-
-.main-btn{
-
-width:100%;
-
-justify-content:center;
+background:#262626;
 
 padding:18px;
 
-font-size:18px;
+border-radius:18px;
+
+margin-bottom:18px;
+
+text-align:left;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.05);
 
 }
 
-.cards{
+.step:hover{
 
-grid-template-columns:1fr;
+transform:translateY(-4px);
+
+background:#2d2d2d;
 
 }
 
-.card{
+.circle{
 
-padding:24px;
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+background:#00d65a;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 font-size:20px;
 
-}
+font-weight:700;
 
-#promoCode{
+flex-shrink:0;
 
-font-size:28px;
+color:#fff;
 
-padding:22px 28px;
-
-letter-spacing:2px;
+box-shadow:0 0 15px rgba(0,214,90,.5);
 
 }
 
-.gallery img{
+.step strong{
 
-width:220px;
-
-}
-
-.cta h2{
-
-font-size:30px;
+color:#00ff88;
 
 }
 
-.floating-whatsapp{
+/*============================
 
-width:60px;
+BOUTON
 
-height:60px;
+=============================*/
 
-font-size:30px;
+.join{
 
-bottom:18px;
+display:block;
 
-right:18px;
+margin-top:28px;
 
-}
+padding:18px;
 
-}
+border-radius:18px;
 
-/* ===========================
-   SMALL MOBILE
-=========================== */
+background:linear-gradient(180deg,#27e86d,#0fbf55);
 
-@media(max-width:420px){
+color:#fff;
 
-.hero h1{
+text-decoration:none;
 
-font-size:28px;
+font-size:20px;
 
-}
+font-weight:700;
 
-.hero p{
+transition:.35s;
 
-font-size:15px;
+box-shadow:0 0 30px rgba(39,232,109,.45);
 
-}
-
-.bookmakers h2,
-.results h2,
-.promo h2,
-.cta h2{
-
-font-size:26px;
+animation:pulse 2s infinite;
 
 }
 
+.join:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 45px rgba(39,232,109,.8);
+
 }
 
-/* ===========================
-   ANIMATIONS
-=========================== */
-
-@keyframes glow{
+@keyframes pulse{
 
 0%{
 
-box-shadow:0 0 0 rgba(255,215,0,.2);
+transform:scale(1);
 
 }
 
 50%{
 
-box-shadow:0 0 45px rgba(255,215,0,.6);
+transform:scale(1.03);
 
 }
 
 100%{
 
-box-shadow:0 0 0 rgba(255,215,0,.2);
+transform:scale(1);
 
 }
 
 }
 
-.main-btn{
+/*============================
 
-animation:glow 2.5s infinite;
+SECURE
+
+=============================*/
+
+.secure{
+
+margin-top:25px;
+
+font-size:15px;
+
+color:#bdbdbd;
 
 }
 
-#promoCode{
+.secure strong{
 
-animation:glow 3s infinite;
+color:#00ff88;
 
 }
 
-/* ===========================
-   SELECTION
-=========================== */
+.secure i{
+
+color:#00ff88;
+
+margin-right:6px;
+
+}
+
+/*============================
+
+RESPONSIVE
+
+=============================*/
+
+@media(max-width:480px){
+
+.hand{
+
+width:65px;
+
+top:15px;
+
+right:8px;
+
+}
+
+.arrow{
+
+top:82px;
+
+right:5px;
+
+font-size:14px;
+
+}
+
+.logo{
+
+width:115px;
+
+}
+
+h1{
+
+font-size:30px;
+
+}
+
+.subtitle{
+
+font-size:15px;
+
+margin-bottom:22px;
+
+}
+
+.card{
+
+padding:22px;
+
+}
+
+.card h2{
+
+font-size:20px;
+
+}
+
+.step{
+
+padding:15px;
+
+}
+
+.circle{
+
+width:40px;
+
+height:40px;
+
+font-size:18px;
+
+}
+
+.join{
+
+font-size:18px;
+
+padding:16px;
+
+}
+
+}
+
+/*============================
+
+SCROLLBAR
+
+=============================*/
+
+::-webkit-scrollbar{
+
+width:7px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#00ff88;
+
+border-radius:50px;
+
+}
+
+/*============================
+
+SELECTION
+
+=============================*/
 
 ::selection{
 
-background:#FFD700;
+background:#00ff88;
 
 color:#000;
 
-}
-
-.cta{
-    position: relative;
-    z-index: 9999;
-}
-
-.main-btn{
-    position: relative;
-    z-index: 10000;
-    pointer-events: auto;
-    cursor: pointer;
 }
