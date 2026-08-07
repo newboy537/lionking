@@ -85,21 +85,13 @@ top:-150px;
 /* Main */
 
 .hand{
-
-position:fixed;
-
-top:18px;
-
-right:12px;
-
-width:75px;
-
-z-index:9999;
-
-pointer-events:none;
-
-animation:finger .8s infinite ease-in-out;
-
+    position: fixed;
+    top: 85px;          /* Monte la main */
+    right: 25px;        /* La rapproche du bord droit */
+    width: 95px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: handMove 1s ease-in-out infinite;
 }
 
 @keyframes finger{
