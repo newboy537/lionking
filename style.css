@@ -86,8 +86,8 @@ top:-150px;
 
 .hand{
     position: fixed;
-    top: 50px;          /* Monte la main */
-    right: 60px;        /* La rapproche du bord droit */
+    top: 20px;          /* Monte la main */
+    right: 100px;        /* La rapproche du bord droit */
     width: 95px;
     z-index: 9999;
     pointer-events: none;
