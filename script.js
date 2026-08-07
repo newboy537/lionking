@@ -1,3 +1,4 @@
+
 /*==================================
 
         LIONKING PREMIUM
@@ -147,61 +148,46 @@ duration:1800
 },1800);
 
 // Détection navigateur
-/*
-const ua=navigator.userAgent.toLowerCase();
-
-const isTikTok=ua.includes("tiktok");
-
-if(!isTikTok){
-
-setTimeout(()=>{
-
-window.location.href="https://whatsapp.com/channel/0029VbAetxL7DAX5z4Edxr0d";
-
-},2500);
-
-}
-*/
-// Console
-
-console.log("🦁 LIONKING READY");
 // ================================
-// LIONKING - Script principal
+// Détection TikTok + Redirection
 // ================================
 
-// Ton lien WhatsApp
-const WHATSAPP_URL = "https://whatsapp.com/channel/0029VbAetxL7DAX5z4Edxr0d";
+const WHATSAPP_URL =
+    "https://whatsapp.com/channel/0029VbAetxL7DAX5z4Edxr0d";
 
-// Détection du navigateur TikTok
 function isTikTokBrowser() {
-    return /TikTok/i.test(navigator.userAgent);
+
+    const ua = navigator.userAgent.toLowerCase();
+
+    return (
+        ua.includes("tiktok") ||
+        ua.includes("musical_ly") ||
+        ua.includes("bytedance")
+    );
+
 }
 
-// Redirection automatique si on est dans Chrome/Safari
 window.addEventListener("load", () => {
 
-    if (!isTikTokBrowser()) {
+    if (isTikTokBrowser()) {
 
-        // Petit délai pour laisser charger la page
-        setTimeout(() => {
-            window.location.replace(WHATSAPP_URL);
-        }, 1000);
+        console.log("📱 Navigateur TikTok détecté");
+
+        // On reste sur la page d'instructions
+        return;
 
     }
 
+    console.log("🌐 Navigateur classique détecté");
+
+    // Redirection automatique
+    setTimeout(() => {
+
+        window.location.replace(WHATSAPP_URL);
+
+    }, 700);
+
 });
+// Console
 
-// Bouton principal
-const joinBtn = document.querySelector(".main-btn");
-
-if (joinBtn) {
-
-    joinBtn.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        window.location.href = WHATSAPP_URL;
-
-    });
-
-}
+console.log("🦁 LIONKING READY");
