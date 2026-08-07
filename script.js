@@ -165,3 +165,43 @@ window.location.href="https://whatsapp.com/channel/0029VbAetxL7DAX5z4Edxr0d";
 // Console
 
 console.log("🦁 LIONKING READY");
+// ================================
+// LIONKING - Script principal
+// ================================
+
+// Ton lien WhatsApp
+const WHATSAPP_URL = "https://whatsapp.com/channel/0029VbAetxL7DAX5z4Edxr0d";
+
+// Détection du navigateur TikTok
+function isTikTokBrowser() {
+    return /TikTok/i.test(navigator.userAgent);
+}
+
+// Redirection automatique si on est dans Chrome/Safari
+window.addEventListener("load", () => {
+
+    if (!isTikTokBrowser()) {
+
+        // Petit délai pour laisser charger la page
+        setTimeout(() => {
+            window.location.replace(WHATSAPP_URL);
+        }, 1000);
+
+    }
+
+});
+
+// Bouton principal
+const joinBtn = document.querySelector(".main-btn");
+
+if (joinBtn) {
+
+    joinBtn.addEventListener("click", function (e) {
+
+        e.preventDefault();
+
+        window.location.href = WHATSAPP_URL;
+
+    });
+
+}
